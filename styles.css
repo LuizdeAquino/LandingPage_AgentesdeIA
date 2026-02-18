@@ -1183,3 +1183,361 @@ h1, h2, h3, h4, h5, h6 {
     scroll-behavior: auto !important;
   }
 }
+
+/* =========================================================
+   PATCH v2 — Icons centered + Orange -> Blue (per reference)
+   ========================================================= */
+
+:root {
+  /* Replace orange accents with accessible blue shades */
+  --accent-orange: #00B7FF;          /* vivid blue (matches neon feel) */
+  --accent-orange-hover: #2AD4FF;    /* lighter hover */
+}
+
+/* Primary/secondary buttons now become blue (they use the variables above) */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #008CFF 100%);
+  box-shadow: 0 10px 30px rgba(0, 183, 255, 0.30);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-orange-hover) 0%, var(--accent-orange) 100%);
+  box-shadow: 0 14px 36px rgba(0, 217, 255, 0.38);
+}
+
+.btn-secondary {
+  color: var(--accent-orange);
+  border-color: var(--accent-orange);
+}
+.btn-secondary:hover {
+  background: var(--accent-orange);
+}
+
+/* Pain cards: center icon and text, create circular icon badge like reference */
+.pain-card {
+  text-align: center;
+}
+
+.pain-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--spacing-sm);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-blue);
+}
+
+.pain-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Metric cards: center icon too (keep the same visual language) */
+.metric-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--spacing-sm);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-blue);
+}
+
+.metric-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Make pain hover framing blue (since orange was removed) */
+.pain-card:hover {
+  border-color: rgba(0, 217, 255, 0.45);
+  box-shadow: 0 10px 38px rgba(0, 217, 255, 0.10);
+}
+
+/* If any chips still use the former orange token, ensure they appear blue */
+.step-duration {
+  background: rgba(0, 217, 255, 0.10);
+  border-color: rgba(0, 217, 255, 0.30);
+  color: var(--accent-blue);
+}
+
+/* =========================================================
+   PATCH v3 — Process Section: Fix z-index + 4-col grid
+   ========================================================= */
+
+/* Process timeline: 4 columns on desktop, 2x2 on tablet/mobile */
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: var(--spacing-lg);
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .process-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .process-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Remove connector elements (they only worked for 3+1 layout) */
+.process-connector {
+  display: none;
+}
+
+/* Fix z-index stacking: step-number BEHIND icon */
+.process-step {
+  position: relative;
+  text-align: center;
+}
+
+.step-number {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(21, 166, 158, 0.10);
+  font-family: var(--font-primary);
+  line-height: 1;
+  z-index: 0;         /* BEHIND */
+}
+
+.step-icon {
+  background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-blue) 100%);
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 8px 24px rgba(21, 166, 158, 0.3);
+  position: relative;
+  z-index: 1;         /* IN FRONT */
+}
+
+.process-step h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-white);
+  position: relative;
+  z-index: 1;
+}
+
+.process-step p {
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.step-duration {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: rgba(0, 217, 255, 0.10);
+  border: 1px solid rgba(0, 217, 255, 0.30);
+  border-radius: 20px;
+  color: var(--accent-blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   PATCH v4 — Testimonials readability (lighter cards + contrast)
+   Keeps blue accents
+   ========================================================= */
+
+/* Make testimonials cards lighter to improve legibility on black background */
+.testimonials-section {
+  background: #000000;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(2, 6, 23, 0.12);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+}
+
+.testimonial-card:hover {
+  border-color: rgba(0, 217, 255, 0.35);
+  box-shadow: 0 26px 64px rgba(0, 0, 0, 0.55);
+}
+
+/* Text colors for light cards */
+.testimonial-text {
+  color: rgba(2, 6, 23, 0.78);
+}
+
+.testimonial-quote {
+  color: var(--accent-blue);
+  opacity: 0.28;
+}
+
+.author-name {
+  color: #020617;
+}
+
+.author-role {
+  color: rgba(2, 6, 23, 0.55);
+}
+
+/* Keep the result highlight with subtle blue tint */
+.testimonial-result {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.12) 0%, rgba(36, 209, 198, 0.08) 100%);
+  color: rgba(2, 6, 23, 0.78);
+  border: 1px solid rgba(0, 217, 255, 0.18);
+}
+
+.result-metric {
+  color: #008CFF;
+}
+
+/* Ensure avatar remains readable on light card */
+.author-avatar {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* Optional: slightly increase spacing for readability */
+.testimonial-card {
+  padding: 2.25rem;
+}
+
+
+/* =========================================================
+   PATCH v5 — Agents icons blue + alignment + hover interaction
+   ========================================================= */
+
+.agents-section {
+  background: #000000;
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .agents-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .agents-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .agents-grid { grid-template-columns: 1fr; }
+}
+
+.agent-card {
+  background: rgba(248, 250, 252, 0.94);
+  border-radius: 20px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.30);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  padding: 1.75rem 1.75rem 1.5rem;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal), background var(--transition-normal);
+}
+
+.agent-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.agent-header-text {
+  flex: 1;
+}
+
+.agent-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #020617;
+}
+
+.agent-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)) ,
+              rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(0, 217, 255, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-blue);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), background var(--transition-normal), border-color var(--transition-normal);
+}
+
+.agent-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.agent-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.agent-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: #0b1120;
+}
+
+.agent-benefits svg {
+  color: #16a34a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Interactive hover effect */
+.agent-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(0, 217, 255, 0.65);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+  background: rgba(248, 250, 252, 0.98);
+}
+
+.agent-card:hover .agent-icon {
+  transform: translateY(-2px) scale(1.05);
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.95), rgba(0, 0, 0, 0)) ,
+              rgba(15, 23, 42, 1);
+  border-color: rgba(0, 217, 255, 0.9);
+  box-shadow: 0 22px 60px rgba(56, 189, 248, 0.55);
+}
+
+.agent-card:focus-within {
+  outline: 2px solid rgba(0, 217, 255, 0.8);
+  outline-offset: 3px;
+}
