@@ -718,6 +718,7 @@ h1, h2, h3, h4, h5, h6 {
 .cta-title {
     font-size: clamp(2rem, 5vw, 3.2rem);
     margin-bottom: var(--spacing-md);
+    white-space: nowrap;
 }
 
 .cta-subtitle {
