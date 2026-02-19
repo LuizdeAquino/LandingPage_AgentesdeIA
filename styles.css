@@ -1817,3 +1817,10 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
   margin-top: 3px;
 }
+.cta-inline {
+    text-align: center;
+}
+
+.cta-inline p {
+    margin-bottom: 20px;
+}
