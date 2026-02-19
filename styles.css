@@ -1818,14 +1818,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 3px;
 }
 .cta-inline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
     text-align: center;
 }
 
-.cta-inline p {
-    margin-bottom: 60px;
-}
-
-.cta-inline .btn-primary {
-    margin-bottom: 30px;
-}
 
