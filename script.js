@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===== BOTÃO WHATSAPP FLUTUANTE (OPCIONAL) =====
 const createFloatingWhatsApp = () => {
     const whatsappBtn = document.createElement('a');
-    whatsappBtn.href = 'https://wa.me/5511999999999?text=Olá!%20Quero%20conhecer%20os%20agentes%20de%20IA';
+    whatsappBtn.href = 'https://wa.me/5562993190634?text=Ol%C3%A1%21%20Quero%20falar%20com%20um%20consultor';
     whatsappBtn.target = '_blank';
     whatsappBtn.className = 'whatsapp-float';
     whatsappBtn.setAttribute('aria-label', 'Contato WhatsApp');
