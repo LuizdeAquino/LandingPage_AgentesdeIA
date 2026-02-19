@@ -534,7 +534,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-50%);
     font-size: 3rem;
     font-weight: 900;
-    color: rgba(21, 166, 158, 0.1);
+    color: #00d9ff73;
     font-family: var(--font-primary);
     line-height: 1;
 }
