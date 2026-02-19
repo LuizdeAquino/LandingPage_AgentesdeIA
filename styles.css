@@ -1535,7 +1535,7 @@ h1, h2, h3, h4, h5, h6 {
 .step-number {
   top: -0.5rem;           /* sobe o número acima do círculo */
   z-index: 2;             /* acima do fundo e do ícone */
-  color: rgba(148, 163, 184, 0.25); /* cinza-azulado suave, mas legível */
+  color: #00d9ff87; /* cinza-azulado suave, mas legível */
 }
 
 .step-icon {
