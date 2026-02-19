@@ -1189,29 +1189,7 @@ h1, h2, h3, h4, h5, h6 {
    PATCH v2 — Icons centered + Orange -> Blue (per reference)
    ========================================================= */
 
-:root {
-  /* Replace orange accents with accessible blue shades */
-  --accent-orange: #00B7FF;          /* vivid blue (matches neon feel) */
-  --accent-orange-hover: #2AD4FF;    /* lighter hover */
-}
 
-/* Primary/secondary buttons now become blue (they use the variables above) */
-.btn-primary {
-  background: linear-gradient(135deg, var(--accent-orange) 0%, #008CFF 100%);
-  box-shadow: 0 10px 30px rgba(0, 183, 255, 0.30);
-}
-.btn-primary:hover {
-  background: linear-gradient(135deg, var(--accent-orange-hover) 0%, var(--accent-orange) 100%);
-  box-shadow: 0 14px 36px rgba(0, 217, 255, 0.38);
-}
-
-.btn-secondary {
-  color: var(--accent-orange);
-  border-color: var(--accent-orange);
-}
-.btn-secondary:hover {
-  background: var(--accent-orange);
-}
 
 /* Pain cards: center icon and text, create circular icon badge like reference */
 .pain-card {
