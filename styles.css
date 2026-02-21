@@ -442,7 +442,6 @@ h1, h2, h3, h4, h5, h6 {
 .agent-card h3 {
     font-size: 1.3rem;
     color: var(--primary-bg);
-    margin-bottom: 1rem;
 }
 
 .agent-subtitle {
@@ -1450,7 +1449,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .agent-card h3 {
-  margin: 0;
+  margin: 1rm;
   font-size: 1rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
