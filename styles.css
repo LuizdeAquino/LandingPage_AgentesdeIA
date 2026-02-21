@@ -1791,6 +1791,8 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em;
   font-size: 1rem;
   color: var(--text-white);
+  margin-bottom: 25px;
+
 }
 
 /* Checklist stays same format (green checks) but improve readability on dark */
