@@ -254,6 +254,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-light);
     margin-bottom: var(--spacing-lg);
     max-width: 700px;
+    text-align: center;
 }
 
 .hero-metrics {
@@ -1781,7 +1782,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Title styling consistent with Process */
 .agent-title {
-  margin: 0.75rem;
   text-align: center;
   font-family: var(--font-primary);
   font-weight: 900;
@@ -1789,7 +1789,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em;
   font-size: 1rem;
   color: var(--text-white);
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 
 }
 
