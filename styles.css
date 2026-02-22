@@ -1449,7 +1449,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .agent-card h3 {
-  margin: 1rm;
+  margin: 0.6rm;
   font-size: 1rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
